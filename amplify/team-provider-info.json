@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vuejsamplifyapitest-dev-215058-authRole",
+      "UnauthRoleArn": "arn:aws:iam::512459162702:role/amplify-vuejsamplifyapitest-dev-215058-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::512459162702:role/amplify-vuejsamplifyapitest-dev-215058-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
+      "UnauthRoleName": "amplify-vuejsamplifyapitest-dev-215058-unauthRole",
+      "StackName": "amplify-vuejsamplifyapitest-dev-215058",
+      "StackId": "arn:aws:cloudformation:eu-west-3:512459162702:stack/amplify-vuejsamplifyapitest-dev-215058/292a64c0-e1e4-11ec-b7e3-06ee42c5619a",
+      "AmplifyAppId": "d2wjskjugj9ydr",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-vuejsamplifyapitest-dev-215058-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "vuejsamplifyapitestea5b464b": {}
+      },
+      "function": {
+        "apitestfunc": {
+          "deploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
+          "s3Key": "amplify-builds/apitestfunc-336a7836594578656452-build.zip"
+        },
+        "dummyfunc": {
+          "deploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
+          "s3Key": "amplify-builds/dummyfunc-58634d6e326a7072794d-build.zip"
+        }
+      }
+    }
+  }
+}

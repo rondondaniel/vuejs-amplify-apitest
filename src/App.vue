@@ -1,18 +1,21 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <amplify-authenticator>
+    <div id="app">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <ApiCall msg="Welcome to Your Vue.js App"/>
+      <amplify-sign-out></amplify-sign-out>
+    </div>
+  </amplify-authenticator>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ApiCall from './components/ApiCall.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ApiCall
+}
 }
 </script>
 

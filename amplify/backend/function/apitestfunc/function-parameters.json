@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "auth": {
+      "vuejsamplifyapitestea5b464b": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

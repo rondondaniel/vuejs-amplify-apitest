@@ -1,0 +1,18 @@
+{
+    "body": "eyJ0ZXN0IjoiYm9keSJ9",
+    "path": "/api/v1/1",
+    "pathParameters": {
+        "id": "1"
+    },
+    "httpMethod": "GET",
+    "isBase64Encoded": true,
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "queryStringParameters": {
+        "foo": "bar"
+    },
+    "multiValueQueryStringParameters": {
+        "foo": ["bar"]
+    }
+}
