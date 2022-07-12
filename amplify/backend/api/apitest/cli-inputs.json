@@ -26,6 +26,32 @@
           "delete"
         ]
       }
+    },
+    "/api/v2": {
+      "name": "/api/v2",
+      "lambdaFunction": "todoapifunc",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/api/v2/values/{id}": {
+      "name": "/api/v2/values/{id}",
+      "lambdaFunction": "todoapifunc",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

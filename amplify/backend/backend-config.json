@@ -44,6 +44,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "todoapifunc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {
@@ -62,6 +67,14 @@
         {
           "category": "function",
           "resourceName": "apitestfunc",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "todoapifunc",
           "attributes": [
             "Name",
             "Arn"

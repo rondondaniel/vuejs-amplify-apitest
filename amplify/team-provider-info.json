@@ -10,11 +10,13 @@
       "StackName": "amplify-vuejsamplifyapitest-dev-215058",
       "StackId": "arn:aws:cloudformation:eu-west-3:512459162702:stack/amplify-vuejsamplifyapitest-dev-215058/292a64c0-e1e4-11ec-b7e3-06ee42c5619a",
       "AmplifyAppId": "d2wjskjugj9ydr",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-vuejsamplifyapitest-dev-215058-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-vuejsamplifyapitest-dev-215058-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-vuejsamplifyapitest-dev-215058-deployment/amplify-cfn-templates/networkingStackTemplate.json"
     },
     "categories": {
       "auth": {
-        "vuejsamplifyapitestea5b464b": {}
+        "vuejsamplifyapitestea5b464b": {},
+        "true": {}
       },
       "function": {
         "apitestfunc": {
@@ -24,6 +26,10 @@
         "dummyfunc": {
           "deploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
           "s3Key": "amplify-builds/dummyfunc-58634d6e326a7072794d-build.zip"
+        },
+        "todoapifunc": {
+          "deploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
+          "s3Key": "amplify-builds/todoapifunc-4d36577637734d4a2b62-build.zip"
         }
       }
     }
