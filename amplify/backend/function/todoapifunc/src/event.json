@@ -1,4 +1,4 @@
 {
-    "path": "/values",
+    "path": "/api/v2/todoitems",
     "httpMethod": "GET"
 }

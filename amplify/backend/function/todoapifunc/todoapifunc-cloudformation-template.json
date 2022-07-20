@@ -15,6 +15,9 @@
     },
     "s3Key": {
       "Type": "String"
+    },
+    "appDatabaseConnectionString": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -69,6 +72,9 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "APP_DATABASE_CONNECTION_STRING": {
+              "Ref": "appDatabaseConnectionString"
             }
           }
         },

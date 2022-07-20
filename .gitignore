@@ -7,6 +7,7 @@ node_modules
 .env*
 .env.local
 .env.*.local
+amplify/backend/api/apitest/env.config.ts
 
 # Log files
 npm-debug.log*

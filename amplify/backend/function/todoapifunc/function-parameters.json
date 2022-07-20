@@ -1,3 +1,9 @@
 {
-  "lambdaLayers": []
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "appDatabaseConnectionString",
+      "environmentVariableName": "APP_DATABASE_CONNECTION_STRING"
+    }
+  ]
 }

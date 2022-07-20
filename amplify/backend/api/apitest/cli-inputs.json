@@ -27,8 +27,8 @@
         ]
       }
     },
-    "/api/v2": {
-      "name": "/api/v2",
+    "/api/v2/values/{id}": {
+      "name": "/api/v2/values/{id}",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",
@@ -40,8 +40,21 @@
         ]
       }
     },
-    "/api/v2/values/{id}": {
-      "name": "/api/v2/values/{id}",
+    "/api/v2/health": {
+      "name": "/api/v2/health",
+      "lambdaFunction": "todoapifunc",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/api/v2/todoitems/{id}": {
+      "name": "/api/v2/todoitems/{id}",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",
