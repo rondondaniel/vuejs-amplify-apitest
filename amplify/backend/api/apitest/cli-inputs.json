@@ -1,34 +1,8 @@
 {
   "version": 1,
   "paths": {
-    "/dummy": {
-      "name": "/dummy",
-      "lambdaFunction": "dummyfunc",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "create",
-          "read",
-          "update",
-          "delete"
-        ]
-      }
-    },
-    "/api/v1/{id}": {
-      "name": "/api/v1/{id}",
-      "lambdaFunction": "apitestfunc",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "create",
-          "read",
-          "update",
-          "delete"
-        ]
-      }
-    },
-    "/api/v2/values/{id}": {
-      "name": "/api/v2/values/{id}",
+    "/health": {
+      "name": "/health",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",
@@ -40,8 +14,8 @@
         ]
       }
     },
-    "/api/v2/health": {
-      "name": "/api/v2/health",
+    "/todoitem/{id}": {
+      "name": "/todoitem/{id}",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",
@@ -53,29 +27,14 @@
         ]
       }
     },
-    "/json/{id}": {
-      "name": "/json/{id}",
+    "/todoitems": {
+      "name": "/todoitems",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",
         "auth": [
           "create",
-          "read",
-          "update",
-          "delete"
-        ]
-      }
-    },
-    "/todoitems/{id}": {
-      "name": "/todoitems/{id}",
-      "lambdaFunction": "todoapifunc",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "create",
-          "read",
-          "update",
-          "delete"
+          "read"
         ]
       }
     }

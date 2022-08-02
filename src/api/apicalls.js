@@ -1,7 +1,8 @@
 import { API, Auth } from 'aws-amplify';
 
-const baseApiUrl = '/todoitems/';
+const baseApiUrl = '/todoitems';
 const idApiUrl = '/todoitem/';
+const healthCheckUrl = '/health'
 const apiName = "apitest";
 
 const api = {
@@ -27,7 +28,7 @@ const api = {
                           });
       return data;      
   },
-  
+
   async fetchTodoItem (itemID) {    
     const path = idApiUrl + itemID;
     const myInit = { 
@@ -75,6 +76,29 @@ const api = {
                           });
       return data;      
   },
+
+  async healthTodoApiCheck() {
+    const path = healthCheckUrl;
+    const myInit = { 
+      response: true,
+      isBase64Encoded: true,
+      headers: { 
+        Authorization: `${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
+      },
+    };
+    console.log("request ", myInit);
+    const data = await API
+                          .get(apiName, path, myInit)
+                          .then(response => {
+                            console.log("Debug :: Response: ", response.data);
+                            console.log("Debug :: Status: ", response.status);
+                            return response.data
+                          })
+                          .catch(error => {
+                            console.log("error:", error.response);
+                          });
+      return data;      
+  }
 }
 
 export default api;

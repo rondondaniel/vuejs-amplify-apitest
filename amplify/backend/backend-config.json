@@ -40,11 +40,6 @@
         }
       ]
     },
-    "dummyfunc": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "todoapifunc": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -56,22 +51,6 @@
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "dummyfunc",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "apitestfunc",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
         {
           "category": "function",
           "resourceName": "todoapifunc",

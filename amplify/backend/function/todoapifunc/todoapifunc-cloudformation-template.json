@@ -86,7 +86,7 @@
         },
         "Runtime": "dotnetcore3.1",
         "MemorySize": "1024",
-        "Layers": [],        
+        "Layers": [],
         "Timeout": 30
       }
     },

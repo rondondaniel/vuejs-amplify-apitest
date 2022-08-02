@@ -74,7 +74,7 @@ namespace todoapifunc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapGet("api/v2/health", async context =>
+                endpoints.MapGet("/health", async context =>
                 {
                     await context.Response.WriteAsync("ASP.NET Core on AWS Lambda: Running");
                 });

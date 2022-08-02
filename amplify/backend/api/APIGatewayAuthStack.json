@@ -64,7 +64,7 @@
                           }
                         ]
                       },
-                      "/*/dummy/*"
+                      "/*/health/*"
                     ]
                   ]
                 },
@@ -94,7 +94,7 @@
                           }
                         ]
                       },
-                      "/*/dummy"
+                      "/*/health"
                     ]
                   ]
                 },
@@ -124,7 +124,7 @@
                           }
                         ]
                       },
-                      "/*/api/v1/*/*"
+                      "/*/todoitem/*/*"
                     ]
                   ]
                 },
@@ -154,7 +154,7 @@
                           }
                         ]
                       },
-                      "/*/api/v1/*"
+                      "/*/todoitem/*"
                     ]
                   ]
                 },
@@ -184,7 +184,7 @@
                           }
                         ]
                       },
-                      "/*/api/v2/values/*/*"
+                      "/POST/todoitems/*"
                     ]
                   ]
                 },
@@ -214,7 +214,7 @@
                           }
                         ]
                       },
-                      "/*/api/v2/values/*"
+                      "/POST/todoitems"
                     ]
                   ]
                 },
@@ -244,7 +244,7 @@
                           }
                         ]
                       },
-                      "/*/api/v2/health/*"
+                      "/GET/todoitems/*"
                     ]
                   ]
                 },
@@ -274,127 +274,7 @@
                           }
                         ]
                       },
-                      "/*/api/v2/health"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:execute-api:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":",
-                      {
-                        "Ref": "apitest"
-                      },
-                      "/",
-                      {
-                        "Fn::If": [
-                          "ShouldNotCreateEnvResources",
-                          "Prod",
-                          {
-                            "Ref": "env"
-                          }
-                        ]
-                      },
-                      "/*/json/*/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:execute-api:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":",
-                      {
-                        "Ref": "apitest"
-                      },
-                      "/",
-                      {
-                        "Fn::If": [
-                          "ShouldNotCreateEnvResources",
-                          "Prod",
-                          {
-                            "Ref": "env"
-                          }
-                        ]
-                      },
-                      "/*/json/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:execute-api:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":",
-                      {
-                        "Ref": "apitest"
-                      },
-                      "/",
-                      {
-                        "Fn::If": [
-                          "ShouldNotCreateEnvResources",
-                          "Prod",
-                          {
-                            "Ref": "env"
-                          }
-                        ]
-                      },
-                      "/*/todoitems/*/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:execute-api:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":",
-                      {
-                        "Ref": "apitest"
-                      },
-                      "/",
-                      {
-                        "Fn::If": [
-                          "ShouldNotCreateEnvResources",
-                          "Prod",
-                          {
-                            "Ref": "env"
-                          }
-                        ]
-                      },
-                      "/*/todoitems/*"
+                      "/GET/todoitems"
                     ]
                   ]
                 }

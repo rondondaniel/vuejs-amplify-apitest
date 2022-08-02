@@ -4,6 +4,7 @@
       <button v-on:click="createItem">Create Todo Item</button>
       <button v-on:click="fetchItems">Fetch All Todo Items</button>
       <button v-on:click="fetchItem">Fetch Todo Item</button>
+      <button v-on:click="healthCheck">Health Check</button>
       <br />
       {{ info }}
   </div>
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     fetchItems: async function () {
-      this.info = await api.fetchItems();
+      this.info = await api.fetchTodoItems();
     },
     fetchItem: async function () {
       this.info = await api.fetchTodoItem("8");
@@ -36,7 +37,10 @@ export default {
             isComplete: false,
       }
       this.info = await api.createTodoItem(body);
-    },    
+    },
+    healthCheck: async function () {
+      this.info = await api.healthTodoApiCheck();
+    }
   }
 }
 </script>
