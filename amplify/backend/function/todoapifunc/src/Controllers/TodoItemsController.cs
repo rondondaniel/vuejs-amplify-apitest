@@ -2,13 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using todoapifunc.Models;
+using todoapifunc.Attribute;
 
 namespace todoapifunc.Controllers
 {
-    [Route("api/v2/[controller]")]
+    
+    [Route("[controller]")]
     [ApiController]
+    [AllowCrossSite]
+    [EnableCors()]
     public class TodoItemsController : ControllerBase
     {
         private readonly TodoDbContext _context;
@@ -21,10 +26,12 @@ namespace todoapifunc.Controllers
         // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
-        {
-            return await _context.TodoItems
-                .Select(x => ItemToDTO(x))
-                .ToListAsync();
+        {            
+            var todoItems = await _context.TodoItems
+                                            .Select(x => ItemToDTO(x))
+                                            .ToListAsync();
+
+            return Ok(new { todoItems });
         }
 
         // GET: api/TodoItems/5

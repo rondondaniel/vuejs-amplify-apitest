@@ -1,19 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Storage;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Microsoft.AspNetCore.HttpOverrides;
 using todoapifunc.Models;
 
 namespace todoapifunc
@@ -46,11 +41,11 @@ namespace todoapifunc
             // CORS setup
             services.AddCors(options =>
             {
-                options.AddPolicy(name: Common.POLICY_API_FOR_VUEJS,
-                    builder => {
-                        //Dev policy
-                        builder.WithOrigins("https://localhost:8080","http://localhost:8080","http://localhost:5001");
-                    });
+                //Dev policy
+                options.AddDefaultPolicy(
+                    builder => builder.AllowAnyOrigin()
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod());
             });
         }
 
@@ -66,9 +61,15 @@ namespace todoapifunc
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseStaticFiles();
+            app.UseForwardedHeaders(new ForwardedHeadersOptions 
+            {
+                ForwardedHeaders = ForwardedHeaders.All
+            });
+            
+            app.UseCors();
 
-            app.UseCors(Common.POLICY_API_FOR_VUEJS);
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {

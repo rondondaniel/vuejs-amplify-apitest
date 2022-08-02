@@ -1,16 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-      <button v-on:click="pingDummy">Send Dummy Get</button>
-      <button v-on:click="pingApitest">Send Apitest Get</button>
-      <button v-on:click="pingApitestV2">Send Todoapitest Get</button>
+      <button v-on:click="createItem">Create Todo Item</button>
+      <button v-on:click="fetchItems">Fetch All Todo Items</button>
+      <button v-on:click="fetchItem">Fetch Todo Item</button>
       <br />
       {{ info }}
   </div>
 </template>
 
 <script>
-import { API, Auth } from 'aws-amplify'
+import api from '@/api/apicalls'
 
 export default {
   name: 'ApiCall',
@@ -23,76 +23,20 @@ export default {
     };
   },
   methods: {
-    pingApitest: async function () {
-      const apiName = "apitest";
-      const path = "/api/v1/1";
-      const myInit = { 
-        response: true,
-        httpMethod: "GET",
-        isBase64Encoded: true,
-        pathParameters: {
-          "id": "1"
-        },
-        headers: { 
-          Authorization: `${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
-        },
-      };
-      console.log("request ", myInit);
-      API
-        .get(apiName, path, myInit)
-        .then(response => {
-          this.info = response.data;
-          console.log("response: ", response.data);
-          console.log("Status: ", response.status);
-        })
-        .catch(error => {
-          console.log("error:", error.response);
-        });
+    fetchItems: async function () {
+      this.info = await api.fetchItems();
     },
-    pingApitestV2: async function () {
-      const apiName = "apitest";
-      const path = "/api/v2/values";
-      const myInit = { 
-        response: true,
-        body: 'tralala',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
-        },
-      };
-      console.log("request ", myInit);
-      API
-        .post(apiName, path, myInit)
-        .then(response => {
-          this.info = response.data;
-          console.log("response: ", response.data);
-          console.log("Status: ", response.status);
-        })
-        .catch(error => {
-          console.log("error:", error.response);
-        });
+    fetchItem: async function () {
+      this.info = await api.fetchTodoItem("8");
     },
-    pingDummy: async function () {
-      const apiName = "apitest";
-      const path = "/dummy";
-      const myInit = { 
-        response: true,
-        headers: { 
-          Authorization: `${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
-        },
-      };
-      console.log("request ", myInit);
-      API
-        .get(apiName, path, myInit)
-        .then(response => {
-          this.info = response.data;
-          console.log("response: ", response.data);
-          console.log("Status: ", response.status);
-        })
-        .catch(error => {
-          console.log("error:", error.response);
-        });
-    }
+    createItem: async function () {
+      const body = {
+            id: 8,
+            name: 'Test Me',
+            isComplete: false,
+      }
+      this.info = await api.createTodoItem(body);
+    },    
   }
 }
 </script>

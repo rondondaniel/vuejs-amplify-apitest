@@ -53,8 +53,21 @@
         ]
       }
     },
-    "/api/v2/todoitems/{id}": {
-      "name": "/api/v2/todoitems/{id}",
+    "/json/{id}": {
+      "name": "/json/{id}",
+      "lambdaFunction": "todoapifunc",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/todoitems/{id}": {
+      "name": "/todoitems/{id}",
       "lambdaFunction": "todoapifunc",
       "permissions": {
         "setting": "private",

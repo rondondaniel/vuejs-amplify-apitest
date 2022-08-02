@@ -29,7 +29,7 @@
         },
         "todoapifunc": {
           "deploymentBucketName": "amplify-vuejsamplifyapitest-dev-215058-deployment",
-          "s3Key": "amplify-builds/todoapifunc-6f6543375147634b3256-build.zip",
+          "s3Key": "amplify-builds/todoapifunc-70354a694152744b3053-build.zip",
           "appDatabaseConnectionString": "server=todoapidb-1.cxvapkr55mcb.eu-west-3.rds.amazonaws.com;port=3306;user=root;password=oP5dBoU2IWkGDZKuPn3u;database=todoapidb;"
         }
       }
